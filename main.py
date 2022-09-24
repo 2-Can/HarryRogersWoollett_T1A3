@@ -11,6 +11,8 @@ board = ["-", "-", "-",
 current_player = "X"
 winner = None
 game_running = True
+count = sum(1 for line in open('tally.txt'))
+
 
 # Display the gameboard
 def print_board(board):
@@ -80,6 +82,8 @@ def check_win():
         print_board(board)
         print(f"{current_player}, you win!")
         end_screen()
+        with open('tally.txt', 'a') as f:
+            f.write(f"{current_player}, you win! \n")
         game_running = False
 
 
@@ -101,7 +105,7 @@ def cpu(board):
             switch_player()
 
 
-# Reassess Win or Draw
+# Game Running Loop
 
 while game_running:
     print_board(board)
@@ -112,11 +116,6 @@ while game_running:
     cpu(board)
     check_win()
     check_draw(board)
-    
-
-# ASCII end screen
-
-
 
 # Print result to txt file
 
