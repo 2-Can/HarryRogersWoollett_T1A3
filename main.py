@@ -74,7 +74,12 @@ def check_draw(board):
         game_running = False
 
 # Change Player
-
+def switch_player():
+    global current_player
+    if current_player == "X":
+        current_player = "O"
+    else:
+        current_player = "X"
 
 
 # CPU Opponent
