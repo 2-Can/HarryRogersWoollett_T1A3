@@ -107,7 +107,9 @@ while game_running:
     check_win()
     check_draw(board)
     switch_player()
-    
+    cpu(board)
+    check_win()
+    check_draw(board)
 
 # ASCII end screen
 
