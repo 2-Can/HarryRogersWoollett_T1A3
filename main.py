@@ -28,12 +28,15 @@ def print_board(board):
 
 # Receive player input
 def player_input(board):
-    inp = int(input("Please enter a number between 1 and 9: "))    
-    if board[inp-1] == "-":
-        board[inp-1] = current_player
-    else:
-        print("Sorry, that position is already occupied.")
-        
+    try:
+        inp = int(input("Please enter a number between 1 and 9: "))    
+        if board[inp-1] == "-":
+            board[inp-1] = current_player
+        else:
+            print("Sorry, that position is already occupied.")
+    except ValueError:
+        print("That wasn't a number, please try again.")
+
 # Assess Win or Draw
 def check_row(board):
     global winner
