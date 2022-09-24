@@ -1,7 +1,11 @@
 # imports
 import random
 from simple_term_menu import TerminalMenu
+import clearing
 from ascii import end_screen
+
+# Clear Terminal
+clearing.clear()
 
 
 # Globals
