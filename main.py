@@ -28,6 +28,7 @@ def print_board(board):
 
 # Receive player input
 def player_input(board):
+    global game_running
     try:
         inp = int(input("Please enter a number between 1 and 9: "))    
         if board[inp-1] == "-":
@@ -36,6 +37,9 @@ def player_input(board):
             print("Sorry, that position is already occupied.")
     except ValueError:
         print("That wasn't a number, please try again.")
+    except KeyboardInterrupt:
+        print("\nThank you for playing.")
+        game_running = False
 
 # Assess Win or Draw
 def check_row(board):
