@@ -1,3 +1,6 @@
+# imports
+
+
 # Global Variables
 
 board = ["-", "-", "-",
@@ -63,11 +66,28 @@ def check_diagonal(board):
         winner = board[2]
         return True
 
+def check_draw(board):
+    global game_running
+    if "-" not in board:
+        print_board(board)
+        print("It's a draw!")
+        game_running = False
+
 # Change Player
 
+
+
+# CPU Opponent
 
 # Reassess Win or Draw
 
 while game_running:
     print_board(board)
     player_input(board)
+
+# ASCII end screen
+
+# Print result to txt file
+
+
+# Tests
