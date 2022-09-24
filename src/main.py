@@ -143,11 +143,11 @@ while game_running:
     check_draw(board)
 
 # Print result to txt file
+
 count = sum(1 for line in open('tally.txt'))
 print(f'There have been {count} total games played.')
 
 # Terminal Menu
-
 
 def main():
     global board
