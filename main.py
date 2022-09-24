@@ -1,5 +1,5 @@
 # imports
-
+import random
 
 # Global Variables
 
@@ -76,6 +76,7 @@ def check_draw(board):
 def check_win():
     global game_running
     if check_row(board) or check_column(board) or check_diagonal(board):
+        print_board(board)
         print(f"{current_player}, you win!")
         game_running = False
 
@@ -90,12 +91,23 @@ def switch_player():
 
 
 # CPU Opponent
+def cpu(board):
+    while current_player == "O":
+        position = random.randint(0, 8)
+        if board[position] == "-":
+            board[position] = "O"
+            switch_player()
+
 
 # Reassess Win or Draw
 
 while game_running:
     print_board(board)
     player_input(board)
+    check_win()
+    check_draw(board)
+    switch_player()
+    
 
 # ASCII end screen
 
