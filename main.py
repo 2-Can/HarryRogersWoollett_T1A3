@@ -1,10 +1,16 @@
 # imports
 import random
+from simple_term_menu import TerminalMenu
 from ascii import end_screen
 
-# Global Variables
+
+# Globals
 
 board = ["-", "-", "-",
+        "-", "-", "-",
+        "-", "-", "-"]
+
+clear_board = ["-", "-", "-",
         "-", "-", "-",
         "-", "-", "-"]
 
@@ -127,5 +133,34 @@ while game_running:
 # Print result to txt file
 count = sum(1 for line in open('tally.txt'))
 print(f'There have been {count} total games played.')
+
+# Terminal Menu
+def main():
+    global board
+    global game_running
+    options = ["Play Again", "Quit"]
+    terminal_menu = TerminalMenu(options)
+    menu_entry_index = terminal_menu.show()
+    print(f"You have selected {options[menu_entry_index]}!")
+    if options[menu_entry_index] == "Play Again":
+        board = clear_board
+        game_running = True
+        while game_running:
+            print_board(board)
+            player_input(board)
+            check_win()
+            check_draw(board)
+            switch_player()
+            cpu(board)
+            check_win()
+            check_draw(board)
+    else:
+        quit()
+
+
+if __name__ == "__main__":
+    main()
+
+
 
 # Tests
