@@ -73,6 +73,13 @@ def check_draw(board):
         print("It's a draw!")
         game_running = False
 
+def check_win():
+    global game_running
+    if check_row(board) or check_column(board) or check_diagonal(board):
+        print(f"{current_player}, you win!")
+        game_running = False
+
+
 # Change Player
 def switch_player():
     global current_player
