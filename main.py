@@ -1,5 +1,6 @@
 # imports
 import random
+from ascii import end_screen
 
 # Global Variables
 
@@ -78,6 +79,7 @@ def check_win():
     if check_row(board) or check_column(board) or check_diagonal(board):
         print_board(board)
         print(f"{current_player}, you win!")
+        end_screen()
         game_running = False
 
 
@@ -110,8 +112,11 @@ while game_running:
     cpu(board)
     check_win()
     check_draw(board)
+    
 
 # ASCII end screen
+
+
 
 # Print result to txt file
 
