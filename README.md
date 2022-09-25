@@ -60,5 +60,16 @@ Clearing Package
 If you can install Linux on a toaster, this will run.
 
 ---
+## Testing
+
+Due to the structure of the program, a majority of testing was able to be completed through gameplay observation. Tests were run in a virtual environment, and the bash wrapper allowed faster setup and execution.
+A pytest was set up to track the tally function, using the below code.
+
+`def test_count():
+    assert count == sum(1 for line in open('tally.txt'))`
+
+This passed successfully after repeated gameplay loops, letting me know the connection with the text file was successful. 
+
+---
 
 ASCII art was used from [TextArt4U](https://textart4u.blogspot.com/2013/05/game-over-text-art.html)
