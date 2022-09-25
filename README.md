@@ -7,32 +7,45 @@ This code was developed following the PEP8 style guide which can be found [here]
 
 ---
 ## Features 
+
 ### Tic Tac Toe Game
+The app features a fully playable version of the classic tic tac toe game. It displays a 3x3 grid, and prompts the user to input where on the grid they would like to place their mark. The next user is then prompted for their input and the cycle repeats. Once the board is full or a player successfully places three marks in a line, the game is over.
+### Computer Opponent
+By using the random module, a computer opponent has been created to play against. After each input, the computer will make its own move by marking one of the remaining open spaces on the grid.
 
-### CPU Opponent
+### Games Tally
+After each game completes, the result is exported to a text file.
+This file can then be read and announces the total number of games played at the end of each match.
 
-
-### Games Played Tally
+![TicTacToe game in operation](docs/tictactoe.PNG)
 
 ### 
 
 ---
 ## Implementation Plan
 After pitching the idea and receiving approval, I created a Trello board using a Kanban template. 
-From here, I listed out the main tasks that needed to completed in prioritised order and added a checklist to further breakdown each task. The below screenshot shows the main screen of my Trello board, and I've included a printed version of the board that shows the checklist items.
+From here, I listed out the main tasks that needed to completed in prioritised order and added a checklist to further breakdown each task. The below screenshot shows the main screen of my Trello board. Cards were moved to the appropriate columns during each stage of their implementation to track progress.
+
+![Trello Board](docs/Trello.PNG)
 
 ---
 ## Installation Guide
-1. Clone the code 
+The best way to install the program is by first downloading the code with the following command:
 
 `git clone https://github.com/2-Can/HarryRogersWoollett_T1A3.git `
 
-2.  Move to the source directory
- 
- `cd src`
+Then, navigate to the directory and execute the bash script with the following command:
+
+`./wrapper.sh`
+
+This will install all required pip packages and then execute the program.
+
+Alternatively, after cloning the repository you can manually install the below dependencies and then execute the main.py in the src directory.
 
 ---
-## Dependencies: 
+
+### Dependencies: 
+
 
 Simple Term Menu Package
 
@@ -43,4 +56,9 @@ Clearing Package
 `pip install clearing`
 
 ---
+### Hardware Requirements
+If you can install Linux on a toaster, this will run.
+
+---
+
 ASCII art was used from [TextArt4U](https://textart4u.blogspot.com/2013/05/game-over-text-art.html)
