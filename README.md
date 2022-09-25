@@ -1,6 +1,8 @@
 # Tic Tac Toe :o: :x: :feet:
 
 ## GitHub Repo: https://github.com/2-Can/HarryRogersWoollett_T1A3
+
+## Vimeo Presentation: https://vimeo.com/753503223 
 ---
 ## Style Guide
 This code was developed following the PEP8 style guide which can be found [here](https://peps.python.org/pep-0008/).
