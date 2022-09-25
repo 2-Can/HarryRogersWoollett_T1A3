@@ -25,7 +25,7 @@ game_running = True
 
 # Display the gameboard
 def print_board(board):
-    """Prints the gameboard
+    """Prints the gameboard.
 
     Args:
         board (_type_): _description_
@@ -40,6 +40,11 @@ def print_board(board):
 
 
 def player_input(board):
+    """Player marks position on grid.
+
+    Args:
+        board (_type_): _description_
+    """    
     global game_running
     try:
         inp = int(input("Please enter a number between 1 and 9: "))
@@ -57,6 +62,14 @@ def player_input(board):
 
 
 def check_row(board):
+    """Checks rows of gameboard for win condition.
+
+    Args:
+        board (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """    
     global winner
     if board[0] == board[1] == board[2] and board[1] != "-":
         winner = board[0]
@@ -70,6 +83,14 @@ def check_row(board):
 
 
 def check_column(board):
+    """Checks columns of gameboard for win condition.
+
+    Args:
+        board (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """    
     global winner
     if board[0] == board[3] == board[6] and board[0] != "-":
         winner = board[0]
@@ -83,6 +104,14 @@ def check_column(board):
 
 
 def check_diagonal(board):
+    """Checks diagonals of gameboard for win condition.
+
+    Args:
+        board (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """    
     global winner
     if board[0] == board[4] == board[8] and board[0] != "-":
         winner = board[0]
@@ -93,6 +122,11 @@ def check_diagonal(board):
 
 
 def check_draw(board):
+    """Checks gameboard for draw condition.
+
+    Args:
+        board (_type_): _description_
+    """    
     global game_running
     if "-" not in board:
         print_board(board)
@@ -101,6 +135,8 @@ def check_draw(board):
 
 
 def check_win():
+    """Evaluates if other check functions have returned True for win conditions.
+    """    
     global game_running
     if check_row(board) or check_column(board) or check_diagonal(board):
         print_board(board)
@@ -114,6 +150,8 @@ def check_win():
 
 # Change Player
 def switch_player():
+    """Switches player making input on game board.
+    """    
     global current_player
     if current_player == "X":
         current_player = "O"
@@ -121,8 +159,13 @@ def switch_player():
         current_player = "X"
 
 
-# CPU Opponent
+# Computer Opponent
 def cpu(board):
+    """Generates random inputs for computer opponent
+
+    Args:
+        board (_type_): _description_
+    """    
     while current_player == "O":
         position = random.randint(0, 8)
         if board[position] == "-":
@@ -150,6 +193,8 @@ print(f'There have been {count} total games played.')
 # Terminal Menu
 
 def main():
+    """Generates post-game terminal menu
+    """    
     global board
     global game_running
     options = ["Play Again", "Quit"]
@@ -174,6 +219,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-# Tests
